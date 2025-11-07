@@ -1,0 +1,66 @@
+# ===========================================================
+# CS744 DECS Project - Git Ignore File
+# Author: Arnob Deb
+# Description: Keeps build artifacts, editor files, and temp data out of Git
+# ===========================================================
+
+# ---------------------------
+# Build and binary files
+# ---------------------------
+*.o
+*.out
+*.exe
+*.a
+*.so
+*.dll
+*.dylib
+empserver
+loadgen
+
+# ---------------------------
+# CivetWeb build artifacts
+# ---------------------------
+decs_project/civetweb/*.o
+decs_project/civetweb/*.a
+decs_project/civetweb/*.so
+decs_project/civetweb/libcivetweb.*
+
+# ---------------------------
+# Temporary and log files
+# ---------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+
+# ---------------------------
+# IDE and editor folders
+# ---------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# ---------------------------
+# OS metadata files
+# ---------------------------
+.DS_Store
+Thumbs.db
+
+# ---------------------------
+# Python / local tooling (if used)
+# ---------------------------
+__pycache__/
+*.pyc
+
+# ---------------------------
+# Local build / cache directories
+# ---------------------------
+build/
+dist/
+cache/
+tmp/
+
+# ---------------------------
+# Other local folders
+# ---------------------------
+decs_project/.vscode/
