@@ -1,7 +1,7 @@
 # 🧠 CS744 DECS Project – Multi-Tier HTTP Employee Management Server
 
 **Author:** Arnob Deb 
-**Course:** CS744 – Design of Engineering Computing Systems (DECS)  
+**Course:** CS744 – Design and Engineering of Computing Systems (DECS)  
 **Semester:** Autumn 2025  
 
 ---
