@@ -16,7 +16,11 @@ SRCS = server.c cache.c db.c
 OBJS = $(SRCS:.c=.o)
 TARGET = empserver
 
-all: $(TARGET)
+# New loadgen target
+LOADGEN = loadgen
+LOADGEN_SRC = loadgen.c
+
+all: $(TARGET) $(LOADGEN)
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
@@ -24,5 +28,8 @@ $(TARGET): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
+$(LOADGEN): $(LOADGEN_SRC)
+	$(CC) $(CFLAGS) -o $(LOADGEN) $(LOADGEN_SRC) -lm -pthread
+
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(TARGET) $(LOADGEN)

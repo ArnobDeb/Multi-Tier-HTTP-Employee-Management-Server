@@ -33,6 +33,7 @@ banner() {
     echo "Type commands like:"
     echo "  POST <id> <name> <department> <salary>"
     echo "  GET <id>"
+    echo "  LIST"
     echo "  PUT <id> <department> <salary>"
     echo "  DELETE <id>"
     echo "  exit"

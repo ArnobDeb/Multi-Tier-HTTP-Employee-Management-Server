@@ -3,6 +3,9 @@
 #define CACHE_H
 
 #include <stddef.h>
+#include <stdatomic.h>
+extern atomic_ulong CACHE_HITS;
+extern atomic_ulong CACHE_MISSES;
 
 typedef struct cache_t cache_t;
 

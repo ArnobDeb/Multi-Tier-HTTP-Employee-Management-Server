@@ -4,6 +4,10 @@
 #include <string.h>
 #include <stdint.h>
 #include <pthread.h>
+#include <stdatomic.h>
+
+atomic_ulong CACHE_HITS = 0;
+atomic_ulong CACHE_MISSES = 0;
 
 typedef struct node {
     char *key;
@@ -105,6 +109,9 @@ char *cache_get(cache_t *c, const char *key) {
     node_t *cur = c->htable[h];
     while (cur) {
         if (strcmp(cur->key, key) == 0) {
+            // Cache HIT
+            atomic_fetch_add(&CACHE_HITS, 1);
+
             // move to head
             detach(c, cur);
             attach_head(c, cur);
@@ -114,6 +121,8 @@ char *cache_get(cache_t *c, const char *key) {
         }
         cur = cur->hnext;
     }
+     // Cache MISS
+    atomic_fetch_add(&CACHE_MISSES, 1);
     pthread_mutex_unlock(&c->lock);
     return NULL;
 }

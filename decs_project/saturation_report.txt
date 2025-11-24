@@ -1,0 +1,35 @@
+Saturation Detection Report
+==========================
+
+Workload: get_all
+ Saturation threads: 32
+ Throughput @sat: 2184.35
+ Latency  @sat: 13.909
+ CPU util @sat: 98.38177619893428%
+ Disk util @sat: 0.1581794871794872%
+ Likely bottleneck: CPU
+
+Workload: get_popular
+ Saturation threads: 24
+ Throughput @sat: 4050.26
+ Latency  @sat: 5.51
+ CPU util @sat: 98.2934191829485%
+ Disk util @sat: 0.04502564102564103%
+ Likely bottleneck: CPU
+
+Workload: mix
+ Saturation threads: 16
+ Throughput @sat: 233.56
+ Latency  @sat: 27.319
+ CPU util @sat: 93.59573268206039%
+ Disk util @sat: 6.167764102564102%
+ Likely bottleneck: CPU
+
+Workload: put_all
+ Saturation threads: 24
+ Throughput @sat: 168.72
+ Latency  @sat: 62.015
+ CPU util @sat: 95.1417539964476%
+ Disk util @sat: 4.240830769230769%
+ Likely bottleneck: CPU
+
